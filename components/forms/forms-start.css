@@ -1,0 +1,39 @@
+.input,
+.select {
+    width: 100%;
+    background: #fff;
+}
+
+.input .input-wrapper,
+.select .input-wrapper {
+    border-radius: var(--border-radius, 6px);
+    box-shadow: 0 0.05rem 0.1875rem rgb(0 0 0 / 10%);
+    transition: 0.2s ease-in-out;
+    line-height: 0;
+}
+
+.input:not(._focused) .input-wrapper:hover,
+.select:not(._focused) .select-wrapper:hover {
+    box-shadow: 0 0.09rem 0.3125rem rgb(0 0 0 / 16%);
+}
+
+.input .input-wrapper::after,
+.select .input-wrapper::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    border-radius: var(--border-radius, 6px);
+    border: 0.09375rem solid var(--border-color);
+    /* 1.5px */
+    pointer-events: none;
+    transition: 0.2s ease-in-out;
+}
+
+.input._focused .input-wrapper::after,
+.select._focused .input-wrapper::after {
+    border-width: 0.125rem;
+    border-color: var(--primary);
+}

@@ -1,0 +1,71 @@
+:root{
+	/* ------ Colors ------ */
+	--primary: #0075ff;
+	--secondary: #ff9933;
+
+	--info: #39C0ED;
+	--success: #00B74A;
+	--warning: #FFA900;
+	--danger: #F93154;
+
+	--text-primary: #202020;
+	--text-secondary: #6B7280;
+	--text-primary-alt: #FFFFFF;
+	--disabled: #eaf0f8;
+	--divider: #E5E7EB;
+
+	--primary-hover: #0069e6;
+	--primary-active: #005ecc;
+	--primary-lite: #e6f1ff;
+	--primary-lite-hover: #d9eaff;
+	--primary-lite-active: #b0d4ff;
+	--primary-dark: #0058bf;
+	--primary-dark-hover: #004699;
+	--primary-dark-active: #003573;
+	--primary-darker: #002959;
+
+	--secondary-hover: #e68a2e;
+	--secondary-active: #cc7a29;
+	--secondary-lite: #fff5eb;
+	--secondary-lite-hover: #fff0e0;
+	--secondary-lite-active: #ffdfc0;
+	--secondary-dark: #bf7326;
+	--secondary-dark-hover: #995c1f;
+	--secondary-dark-active: #734517;
+	--secondary-darker: #593612;
+
+	--info-hover: #33add5;
+	--info-active: #2e9abe;
+	--info-lite: #ebf9fd;
+	--info-lite-hover: #e1f6fc;
+	--info-lite-active: #c2ebf9;
+
+	--success-hover: #00a543;
+	--success-active: #00923b;
+	--success-lite: #e6f8ed;
+	--success-lite-hover: #d9f4e4;
+	--success-lite-active: #b0e9c7;
+
+	--warning-hover: #e69800;
+	--warning-active: #cc8700;
+	--warning-lite: #fff6e6;
+	--warning-lite-hover: #fff2d9;
+	--warning-lite-active: #ffe4b0;
+
+	--danger-hover: #e02c4c;
+	--danger-active: #c72743;
+	--danger-lite: #feeaee;
+	--danger-lite-hover: #fee0e5;
+	--danger-lite-active: #fdbfca;
+
+	/* ------ Utility ------ */
+	--focus-font: 'Roboto', sans-serif;
+	--body-font: 'Open Sans', sans-serif;
+	--disabled-opacity: 0.6;
+	--font-medium: 500;
+	--gap: 1rem;
+	--background-color: #fff;
+	--outline: var(--primary, #202020);
+	--border-radius: 0.375rem;
+	--border-color: #BBC1E1;
+}

@@ -1,0 +1,41 @@
+/*!
+ {{ IMPORT: root, reboot, buttons/buttons }}
+ */
+ 
+.btn-secondary{
+    border-color: var(--secondary);
+    background-color: var(--secondary);
+    color: var(--text-primary-alt);
+}
+
+.btn-secondary:hover:not(:disabled), .btn-secondary:focus{
+    background: var(--secondary-hover);
+    border-color: var(--secondary-hover);
+}
+
+/*-- Outline --*/
+.btn-secondary-outline{
+    border-color: var(--secondary);
+    background: var(--text-secondary-alt);
+    color: var(--secondary);
+}
+
+.btn-secondary-outline:hover:not([disabled]), .btn-secondary-outline:focus{
+    background: var(--secondary-lite-hover);
+}
+
+/*-- Ghost --*/
+.btn-secondary-ghost{
+    border-color: transparent;
+    background: var(--text-secondary-alt);
+    color: var(--secondary);
+}
+
+.btn-secondary-ghost:hover:not([disabled]), .btn-secondary-ghost:focus{
+    border-color: transparent;
+    background: var(--secondary-lite-hover);
+}
+
+.btn-secondary, .btn-secondary-outline, .btn-secondary-ghost{
+    --outline: var(--secondary);
+}

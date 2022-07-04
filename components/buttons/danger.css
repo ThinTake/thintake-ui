@@ -1,0 +1,41 @@
+/*!
+ {{ IMPORT: root, reboot, buttons/buttons }}
+ */
+
+.btn-danger{
+    border-color: var(--danger);
+    background-color: var(--danger);
+    color: var(--text-primary-alt);
+}
+
+.btn-danger:hover:not(:disabled), .btn-danger:focus{
+    background: var(--danger-hover);
+    border-color: var(--danger-hover);
+}
+
+/*-- Outline --*/
+.btn-danger-outline{
+    border-color: var(--danger);
+    background: var(--text-danger-alt);
+    color: var(--danger);
+}
+
+.btn-danger-outline:hover:not([disabled]), .btn-danger-outline:focus{
+    background: var(--danger-lite-hover);
+}
+
+/*-- Ghost --*/
+.btn-danger-ghost{
+    border-color: transparent;
+    background: var(--text-danger-alt);
+    color: var(--danger);
+}
+
+.btn-danger-ghost:hover:not([disabled]), .btn-danger-ghost:focus{
+    border-color: transparent;
+    background: var(--danger-lite-hover);
+}
+
+.btn-danger:focus, .btn-danger-outline:focus, .btn-danger-ghost:focus{
+    --outline: var(--danger);
+}

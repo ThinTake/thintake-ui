@@ -1,0 +1,41 @@
+/*!
+ {{ IMPORT: root, reboot, buttons/buttons }}
+ */
+ 
+.btn-warning{
+    border-color: var(--warning);
+    background-color: var(--warning);
+    color: var(--text-primary-alt);
+}
+
+.btn-warning:hover:not(:disabled), .btn-warning:focus{
+    background: var(--warning-hover);
+    border-color: var(--warning-hover);
+}
+
+/*-- Outline --*/
+.btn-warning-outline{
+    border-color: var(--warning);
+    background: var(--text-warning-alt);
+    color: var(--warning);
+}
+
+.btn-warning-outline:hover:not([disabled]), .btn-warning-outline:focus{
+    background: var(--warning-lite-hover);
+}
+
+/*-- Ghost --*/
+.btn-warning-ghost{
+    border-color: transparent;
+    background: var(--text-warning-alt);
+    color: var(--warning);
+}
+
+.btn-warning-ghost:hover:not([disabled]), .btn-warning-ghost:focus{
+    border-color: transparent;
+    background: var(--warning-lite-hover);
+}
+
+.btn-warning:focus, .btn-warning-outline:focus, .btn-warning-ghost:focus{
+    --outline: var(--warning);
+}

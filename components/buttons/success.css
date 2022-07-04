@@ -1,0 +1,41 @@
+/*!
+ {{ IMPORT: root, reboot, buttons/buttons }}
+ */
+ 
+.btn-success{
+    border-color: var(--success);
+    background-color: var(--success);
+    color: var(--text-primary-alt);
+}
+
+.btn-success:hover:not(:disabled), .btn-success:focus{
+    background: var(--success-hover);
+    border-color: var(--success-hover);
+}
+
+/*-- Outline --*/
+.btn-success-outline{
+    border-color: var(--success);
+    background: var(--text-success-alt);
+    color: var(--success);
+}
+
+.btn-success-outline:hover:not([disabled]), .btn-success-outline:focus{
+    background: var(--success-lite-hover);
+}
+
+/*-- Ghost --*/
+.btn-success-ghost{
+    border-color: transparent;
+    background: var(--text-success-alt);
+    color: var(--success);
+}
+
+.btn-success-ghost:hover:not([disabled]), .btn-success-ghost:focus{
+    border-color: transparent;
+    background: var(--success-lite-hover);
+}
+
+.btn-success:focus, .btn-success-outline:focus, .btn-success-ghost:focus{
+    --outline: var(--success);
+}

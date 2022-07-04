@@ -1,0 +1,332 @@
+/*!
+ {{ IMPORT: root }}
+ */
+ 
+/* @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;700&family=Roboto:wght@400;500;700&display=swap'); */
+
+/*
+ * CSS Reset And Common css
+ */
+
+/* Box sizing rules */
+*,
+*::before,
+*::after{
+    box-sizing: border-box;
+    position: relative;
+}
+
+/* Remove default margin */
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+p,
+figure,
+picture {
+    margin: 0;
+}
+
+/* Set core root defaults */
+html:focus-within {
+  scroll-behavior: smooth;
+}
+html{
+	height: 100%;
+	width: 100%;
+}
+
+/* Set core body defaults */
+body{
+	margin: 0;
+    font-family: var(--body-font);
+    font-weight: 400;
+    line-height: 1.3;
+    min-height: 100%;
+	font-size: 1rem;
+	color: var(--text-primary);
+	text-align: start;
+	background-color: var(--background-color);
+	-webkit-text-size-adjust: 100%;
+	-webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+hr {
+	margin: 1rem 0;
+	color: inherit;
+	background-color: currentColor;
+	border: 0;
+	opacity: .25
+}
+
+hr:not([size]) {
+	height: 1px
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: var(--focus-font);
+	margin-top: 0;
+	margin-bottom: .5rem;
+	font-weight: 500;
+	line-height: 1.2
+}
+
+h1 {
+	font-size: calc(1.383rem + 1.5vw)
+}
+
+h2 {
+	font-size: calc(1.296rem + .9vw)
+}
+
+h3 {
+	font-size: calc(1.215rem + .6vw)
+}
+
+h4{
+	font-size: calc(1.138rem + .3vw)
+}
+
+h5 {
+	font-size: 1.067rem
+}
+
+@media (min-width: 1200px) {
+	h1 {
+		font-size: 3.052rem
+	}
+	h2 {
+		font-size: 2.441rem
+	}
+	h3 {
+		font-size: 1.953rem
+	}
+	h4 {
+		font-size: 1.563rem
+	}
+	h5 {
+		font-size: 1.25rem
+	}
+}
+
+h6 {
+	font-size: 1rem
+}
+
+p {
+	margin-top: 0;
+	margin-bottom: 1rem
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+
+/* Make images easier to work with */
+img,
+picture {
+    max-width: 100%;
+    display: block;
+}
+
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+select,
+optgroup,
+textarea {
+	margin: 0;
+    font-family: var(--focus-font);
+	font-size: 1rem;
+	line-height: 1.3;
+}
+
+/* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+    html:focus-within {
+        scroll-behavior: auto;
+    }
+    
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+}
+
+b,
+strong {
+	font-weight: bolder
+}
+
+small,
+.small {
+	font-size: .8125em
+}
+
+a:not(.btn) {
+	color: var(--primary, #0075ff);
+	text-decoration: underline
+}
+
+a:not(.btn):hover, a:not(.btn):focus {
+	color: var(--primary-hover, #0069e6);
+}
+
+a:focus {
+	outline: dotted
+}
+
+a:not([href]):not([class]),
+a:not([href]):not([class]):hover {
+	color: inherit;
+	text-decoration: none
+}
+
+figure {
+	margin: 0 0 1rem
+}
+
+img,
+svg {
+	vertical-align: middle
+}
+
+table {
+	caption-side: bottom;
+	border-collapse: collapse
+}
+
+caption {
+	padding-top: .5rem;
+	padding-bottom: .5rem;
+	color: var(--text-secondary, #6c757d);
+	text-align: left
+}
+
+th {
+	text-align: inherit;
+	text-align: -webkit-match-parent
+}
+
+thead,
+tbody,
+tfoot,
+tr,
+td,
+th {
+	border-color: inherit;
+	border-style: solid;
+	border-width: 0
+}
+
+label {
+	display: inline-block
+}
+
+button:focus:not(:focus-visible) {
+	outline: 0
+}
+
+button,
+select {
+	text-transform: none
+}
+
+select {
+	word-wrap: normal
+}
+
+select:disabled {
+	opacity: 1
+}
+
+[list]::-webkit-calendar-picker-indicator {
+	display: none
+}
+button,
+[type="button"],
+[type="reset"],
+[type="submit"] {
+	-webkit-appearance: button
+}
+
+button:not(:disabled),
+[type="button"]:not(:disabled),
+[type="reset"]:not(:disabled),
+[type="submit"]:not(:disabled),
+[role="button"],
+a {
+	cursor: pointer
+}
+
+button:focus,
+[type="button"]:focus,
+[type="reset"]:focus,
+[type="submit"]:focus,
+[role="button"]:focus,
+a:focus, *:not(input):not(textarea):focus{
+    outline: 0;
+	border-radius: var(--border-radius, 6px);
+    box-shadow: 0 0 0 0.125rem var(--background-color), 0 0 0 0.25rem var(--outline);
+}
+
+::-moz-focus-inner {
+	padding: 0;
+	border-style: none
+}
+
+textarea {
+	resize: vertical
+}
+
+::-webkit-datetime-edit-fields-wrapper,
+::-webkit-datetime-edit-text,
+::-webkit-datetime-edit-minute,
+::-webkit-datetime-edit-hour-field,
+::-webkit-datetime-edit-day-field,
+::-webkit-datetime-edit-month-field,
+::-webkit-datetime-edit-year-field {
+	padding: 0
+}
+
+::-webkit-inner-spin-button {
+	height: auto
+}
+
+[type="search"] {
+	outline-offset: -2px;
+	-webkit-appearance: textfield
+}
+
+::-webkit-search-decoration {
+	-webkit-appearance: none
+}
+
+::-webkit-color-swatch-wrapper {
+	padding: 0
+}
+
+::file-selector-button {
+	font: inherit
+}
+
+::-webkit-file-upload-button {
+	font: inherit;
+	-webkit-appearance: button
+}
+
+[hidden], .hidden {
+	display: none !important
+}

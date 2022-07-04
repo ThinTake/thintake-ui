@@ -1,0 +1,131 @@
+/*!
+ {{ IMPORT: root, reboot }}
+ */
+
+.btn{
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    gap: 0.5rem;
+    height: 2.375rem;
+    width: auto;
+    background-color: var(--border-color);
+    color: var(--text-primary);
+    text-align: center;
+    text-decoration: none;
+    vertical-align: middle;
+    font-size: 0.9375rem;
+    line-height: 1;
+    font-weight: var(--font-medium);
+    border: 0.0625rem solid transparent;
+    border-radius: var(--border-radius, 6px);
+    padding: 0 1rem;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    user-select: none;
+    transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+}
+
+.btn-reset{
+    border: 0;
+    height: auto;
+    background-color: transparent;
+    padding: 0;
+}
+
+.btn:focus{
+    outline: 0;
+    box-shadow: 0 0 0 0.125rem var(--background-color), 0 0 0 0.25rem var(--outline);
+}
+
+.btn:disabled{
+    pointer-events: none;
+    opacity: var(--disabled-opacity);
+}
+
+.btn.btn-block{
+    width: 100%;
+}
+
+/*----- START::Image && Icon Button -----*/
+.btn img{
+    height: 1.5rem;
+    width: 1.5rem;
+    display: inline-block;
+}
+.btn i{
+    font-size: 1.125rem;
+}
+.btn svg{
+    height: 1.125rem;
+    width: 1.125rem;
+}
+/*----- END::Image && Icon Button -----*/
+
+
+/*----- START::Icon Only Button -----*/
+.btn-icon{
+    width: 2.37500rem;
+    padding: 0;
+}
+/*----- END::Icon Only Button -----*/
+
+
+/*----- START::Small Buttons -----*/
+.btn-sm{
+    height: 1.875rem;
+    font-size: 0.875rem;
+    line-height: 1.125;
+}
+.btn.btn-sm img{
+    height: 1.125rem;
+    width: 1.125rem;
+    display: inline-block;
+}
+.btn.btn-sm i{
+    font-size: 1rem;
+}
+.btn.btn-sm svg{
+    height: 1rem;
+    width: 1rem;
+}
+.btn-icon.btn-sm{
+    width: 1.875rem;
+    padding: 0;
+}
+/*----- END::Small Buttons -----*/
+
+/*----- START::Progress/Loading -----*/
+.btn-progress svg, .btn-progress.inprogress .text {
+    display: none;
+}
+
+.btn-progress.inprogress svg{
+    display: block;
+}
+.btn-progress.inprogress{
+    cursor: not-allowed;
+}
+.btn-progress .spinner {
+    animation: btn-loader-rotate 2s linear infinite;
+    width: 25px;
+    height: 25px;
+    margin: -0.5px 0 -0.5px 0;
+}
+.btn-progress .spinner .path{
+    stroke: #fff;
+    stroke-linecap: round;
+    animation: btn-loader-dash 1.5s ease-in-out infinite;
+}
+
+@keyframes btn-loader-rotate {
+    100% {transform: rotate(360deg);}
+}
+
+@keyframes btn-loader-dash {
+    0% {stroke-dasharray: 1, 150;stroke-dashoffset: 0;}
+    50% {stroke-dasharray: 90, 150;stroke-dashoffset: -35;}
+    100% {stroke-dasharray: 90, 150;stroke-dashoffset: -124;}
+}
+/*----- END::Progress/Loading -----*/

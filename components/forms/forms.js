@@ -8,13 +8,13 @@ const tt_input = (function() {
         e.target.closest('.input').classList.add('_hasValue');
 
         showlaceholder(e.target);
-    }
+    };
 
     const showlaceholder = (input)=>{
         if(input.dataset.placeholder != undefined){
             input.setAttribute('placeholder', input.dataset.placeholder);
         }
-    }
+    };
 
     const handleBlur = (e) => {
         e.target.closest('.input').classList.remove('_focused');
@@ -22,7 +22,7 @@ const tt_input = (function() {
             e.target.closest('.input').classList.remove('_hasValue');
         }
         e.target.removeAttribute('placeholder');
-    }
+    };
 
     const handleInput = (e) => {
         if(e.target.getAttribute('rows') != null) return;
@@ -41,7 +41,7 @@ const tt_input = (function() {
         else{
             e.target.style.overflow = 'hidden';
         }
-    }
+    };
 
     const init = (parentSelector = null) => {
         let selector = tt.d;
@@ -79,7 +79,7 @@ const tt_input = (function() {
                 input.addEventListener('input', handleInput);
             }
         });
-    }
+    };
 
     return{
         init: init

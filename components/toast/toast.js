@@ -30,7 +30,7 @@
         Object.entries(new_options).forEach(([option, value]) => {
             defaultParams[option] = value;
         });
-    }
+    };
 
     const show = (new_options={})=>{
         Object.assign(options, defaultParams);
@@ -82,7 +82,7 @@
             if(options.showClose){
                 let closebtn = document.createElement('button');
                 closebtn.classList.add('close');
-                closebtn.insertAdjacentHTML('afterbegin', '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512.021 512.021" width="10" height="10px"><path d="M301.258 256.01L502.645 54.645c12.501-12.501 12.501-32.769 0-45.269s-32.769-12.501-45.269 0h0L256.01 210.762 54.645 9.376c-12.501-12.501-32.769-12.501-45.269 0s-12.501 32.769 0 45.269L210.762 256.01 9.376 457.376c-12.501 12.501-12.501 32.769 0 45.269s32.769 12.501 45.269 0L256.01 301.258l201.365 201.387c12.501 12.501 32.769 12.501 45.269 0s12.501-32.769 0-45.269L301.258 256.01z"/></svg>')
+                closebtn.insertAdjacentHTML('afterbegin', '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512.021 512.021" width="10" height="10px"><path d="M301.258 256.01L502.645 54.645c12.501-12.501 12.501-32.769 0-45.269s-32.769-12.501-45.269 0h0L256.01 210.762 54.645 9.376c-12.501-12.501-32.769-12.501-45.269 0s-12.501 32.769 0 45.269L210.762 256.01 9.376 457.376c-12.501 12.501-12.501 32.769 0 45.269s32.769 12.501 45.269 0L256.01 301.258l201.365 201.387c12.501 12.501 32.769 12.501 45.269 0s12.501-32.769 0-45.269L301.258 256.01z"/></svg>');
                 closebtn.addEventListener('click', (e)=>{
                     e.stopPropagation();
                     close(id);
@@ -103,7 +103,7 @@
         }
 
         return id;
-    }
+    };
 
     const handleOnClick = (e)=>{
         let callBack = getCallBack(e.target.id, 'onClick');
@@ -113,7 +113,7 @@
         if(e.target.dataset.closeOnClick !== 'false'){
             close(e.target.id);
         }
-    }
+    };
 
     const getContainer = (position='top-right')=>{
         if(containers[position]){
@@ -129,7 +129,7 @@
             document.body.appendChild(container);
             return container;
         }
-    }
+    };
 
     const close = (id)=>{
         let toRemove = document.getElementById(id);
@@ -144,42 +144,42 @@
             removeCallBacks(id);
             removeContainer(position);
         }
-    }
+    };
 
     const removeContainer = (position)=>{
         if(containers[position] && !containers[position].hasChildNodes()){
             containers[position].remove();
             delete containers[position];
         }
-    }
+    };
 
     const setMobilePosition = (position)=>{
         mobilePosition = position;
         Object.entries(containers).forEach(([position, element]) => {
             element.dataset.mobilePosition = mobilePosition;
         });
-    }
+    };
 
     const addCallBacks = (id, onClick, onClose) => {
         callBacks[id+'onClick'] = onClick;
         callBacks[id+'onClose'] = onClose;
-    }
+    };
 
     const getCallBack = (id, type) => {
         return callBacks[id+type];
-    }
+    };
 
     const removeCallBacks = (id) => {
         delete callBacks[id+'onClick'];
         delete callBacks[id+'onClose'];
-    }
+    };
 
     return {
         show: show,
         close: close,
         setMobilePosition: setMobilePosition,
         setDefaults: setDefaults,
-    }
+    };
 })();
 
 tt.toast = tt_toast;

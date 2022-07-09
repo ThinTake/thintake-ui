@@ -11,11 +11,7 @@
         if (select.selectedIndex != 0) {
             element.classList.add('_hasValue');
         }
-
-        /* select.addEventListener('focus', handleFocus);
-        select.addEventListener('blur', handleBlur);
-        select.addEventListener('change', handleChange); */
-
+        
         select.addEventListener('focus', (e) => {
             e.target.closest('.select').classList.add('_focused');
         });
@@ -33,7 +29,7 @@
                 e.target.closest('.select').classList.remove('_hasValue');
             }
         });
-    }
+    };
 
     const init = (parentSelector = null) => {
         let selector = tt.d;
@@ -43,7 +39,7 @@
         selector.querySelectorAll('.select').forEach((element)=>{
             bindEvents(element);
         });
-    }
+    };
 
     return{
         init: init

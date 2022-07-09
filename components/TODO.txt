@@ -1,0 +1,2 @@
+Add SPA (Single page Applicaion) Feature
+Add Event Manager that supports SPA

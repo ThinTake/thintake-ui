@@ -2,27 +2,27 @@
  * {{IMPORT root}}
  */
 tt.throttle = function (cb, delay = 1000) {
-    let shouldWait = false
-    let waitingArgs
+    let shouldWait = false;
+    let waitingArgs;
 
     const timeoutFunc = () => {
         if (waitingArgs == null) {
-            shouldWait = false
+            shouldWait = false;
         } else {
-            cb(...waitingArgs)
-            waitingArgs = null
-            setTimeout(timeoutFunc, delay)
+            cb(...waitingArgs);
+            waitingArgs = null;
+            setTimeout(timeoutFunc, delay);
         }
-    }
+    };
 
     return (...args) => {
         if (shouldWait) {
-            waitingArgs = args
-            return
+            waitingArgs = args;
+            return;
         }
 
-        cb(...args)
-        shouldWait = true
-        setTimeout(timeoutFunc, delay)
+        cb(...args);
+        shouldWait = true;
+        setTimeout(timeoutFunc, delay);
     }
-}
+};

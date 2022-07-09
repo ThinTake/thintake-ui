@@ -3,12 +3,12 @@ const tt = (()=>{
 
     var addToInit = (toAdd)=>{
         toInit.push(toAdd);
-    }
+    };
     var init = (selector = null)=>{
         toInit.forEach((item)=>{
             item(selector);
         });
-    }
+    };
 
     var getUID = (prefix = 'tt_')=>{
         do {
@@ -28,7 +28,7 @@ const tt = (()=>{
             script.appendChild(document.createTextNode(oldScript.innerHTML));
             oldScript.parentNode.replaceChild(script, oldScript);
         });
-    }
+    };
 
     return {
         d:d,

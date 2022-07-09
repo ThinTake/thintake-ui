@@ -2,11 +2,11 @@
  * {{IMPORT root}}
  */
 tt.debounce = function (cb, delay = 250) {
-  let timeout
+  let timeout;
   return (...args) => {
-    clearTimeout(timeout)
+    clearTimeout(timeout);
     timeout = setTimeout(() => {
-      cb(...args)
+      cb(...args);
     }, delay)
   }
-}
+};

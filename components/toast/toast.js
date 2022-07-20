@@ -7,24 +7,25 @@
     const options  = {};
     const callBacks = {};
     const defaultParams = {
-        html: '',
-        icon: '',
+        title       : '',
+        message     : '',
+        icon        : '',
         action: {
-            text: '',
-            classes: null,
-            id:'',
-            onClick: undefined,
+            text    : '',
+            class   : null,
+            id      : '',
+            onClick : undefined,
         },
-        position: 'top-right',
-        classes: null,
-        displayDuration: 4000,
-        showClose: true,
-        closeOnClick: true,
-        onClick: undefined,
-        onClose: undefined,
+        position        : 'top-right',
+        class           : null,
+        duration        : 4000,
+        showClose       : true,
+        closeOnClick    : true,
+        onClick         : undefined,
+        onClose         : undefined,
     };
 
-    let mobilePosition='bottom';/* bottom|top|default */
+    var mobilePosition='bottom';/* bottom|top|default */
 
     const setDefaults = (new_options)=>{
         Object.entries(new_options).forEach(([option, value]) => {
@@ -40,47 +41,73 @@
 
         const id = tt.getUID('toast_');
 
-        let toast = document.createElement('div');
+        var toast = document.createElement('div');
         toast.classList.add('toast');
         toast.id = id;
         toast.dataset.closeOnClick = options.closeOnClick;
 
-        if(options.classes != null){
-            toast.classList.add(options.classes);
+        if(options.class != null){
+            toast.classList.add(options.class);
         }
 
-        let content = document.createElement('div');
-        content.classList.add('content');
-
-        let title = document.createElement('div');
-        title.classList.add('title');
-        title.insertAdjacentHTML('afterbegin', options.html);
-        content.append(title);
-        
-        if(options.icon.length > 0){
-            content.insertAdjacentHTML('afterbegin', options.icon);
-        }
+        var content = document.createElement('div');
+        content.classList.add('toastContent');
         toast.append(content);
 
-        if(options.showClose || options.action.text.length > 0){
-            let actions = document.createElement('div');
-            actions.classList.add('toast_actions');
+        var textContent = document.createElement('div');
+        textContent.classList.add('textContent');
+        content.append(textContent);
+        
+        if(options.title != ''){
+            var title = document.createElement('span');
+            title.classList.add('title');
+            title.innerHTML = options.title;
+            textContent.append(title);
+            toast.classList.add('hasTitle');
+        }
 
-            if(options.action.text.length > 0){
-                let action = document.createElement('button');
-                if(options.action.classes != null){
-                    action.classList.add(options.action.classes);
+        if(options.message != ''){
+            var message = document.createElement('span');
+            message.classList.add('message');
+            message.insertAdjacentHTML('afterbegin', options.message);
+            textContent.append(message);
+            toast.classList.add('hasMessage');
+        }
+
+        if(options.icon != ''){
+            var iconTemplate = document.createElement('template');
+            iconTemplate.innerHTML = options.icon.trim();
+
+            var icon = iconTemplate.content.firstChild;
+            icon.classList.add('icon');
+
+            content.prepend(icon);
+            toast.classList.add('hasIcon');
+        }
+
+        if(options.showClose || options.action.text.length > 0){
+            var actions = document.createElement('div');
+            actions.classList.add('toastActions');
+
+            if(options.action.text != ''){
+                var action = document.createElement('button');
+                if(options.action.class != null){
+                    action.classList.add(options.action.class);
                 }
                 action.id = options.action.id;
                 action.textContent = options.action.text;
 
                 if(options.action.onClick !== undefined){
-                    action.addEventListener('click', options.action.onClick);
+                    action.addEventListener('click', function(e){
+                        e.stopPropagation();
+                        options.action.onClick(e);
+                    });
                 }
                 actions.append(action);
+                toast.classList.add('hasAction');
             }
             if(options.showClose){
-                let closebtn = document.createElement('button');
+                var closebtn = document.createElement('button');
                 closebtn.classList.add('close');
                 closebtn.insertAdjacentHTML('afterbegin', '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512.021 512.021" width="10" height="10px"><path d="M301.258 256.01L502.645 54.645c12.501-12.501 12.501-32.769 0-45.269s-32.769-12.501-45.269 0h0L256.01 210.762 54.645 9.376c-12.501-12.501-32.769-12.501-45.269 0s-12.501 32.769 0 45.269L210.762 256.01 9.376 457.376c-12.501 12.501-12.501 32.769 0 45.269s32.769 12.501 45.269 0L256.01 301.258l201.365 201.387c12.501 12.501 32.769 12.501 45.269 0s12.501-32.769 0-45.269L301.258 256.01z"/></svg>');
                 closebtn.addEventListener('click', (e)=>{
@@ -95,23 +122,25 @@
         addCallBacks(id, options.onClick, options.onClose);
 
         getContainer(options.position).prepend(toast);
+        setTimeout(() => {
+            toast.classList.add('shown');
+        }, 1);
 
-        if(options.displayDuration > 0){
+        if(options.duration > 0){
             setTimeout(()=>{
                 close(id);
-            }, options.displayDuration);
+            }, options.duration);
         }
-
         return id;
     };
 
     const handleOnClick = (e)=>{
-        let callBack = getCallBack(e.target.id, 'onClick');
+        var callBack = getCallBack(e.target.id, 'onClick');
         if(callBack !== undefined){
             callBack();
         }
-        if(e.target.dataset.closeOnClick !== 'false'){
-            close(e.target.id);
+        if(e.currentTarget.dataset.closeOnClick !== 'false'){
+            close(e.currentTarget.id);
         }
     };
 
@@ -120,8 +149,8 @@
             return containers[position];
         }
         else{
-            let container = document.createElement('div');
-            container.classList.add('toast-container');
+            var container = document.createElement('div');
+            container.classList.add('toastContainer');
             container.dataset.position = position;
             container.dataset.mobilePosition = mobilePosition;
 
@@ -132,17 +161,21 @@
     };
 
     const close = (id)=>{
-        let toRemove = document.getElementById(id);
+        var toRemove = document.getElementById(id);
         if(toRemove !== null){
-            let position = toRemove.parentNode.dataset.position;
+            var position = toRemove.parentNode.dataset.position;
             
-            let callBack = getCallBack(id, 'onClose');
+            var callBack = getCallBack(id, 'onClose');
             if(callBack !== undefined){
                 callBack();
             }
-            toRemove.remove();
+            toRemove.classList.remove('shown');
             removeCallBacks(id);
             removeContainer(position);
+            
+            setTimeout(() => {
+                toRemove.remove();
+            }, 250);
         }
     };
 

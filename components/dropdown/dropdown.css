@@ -1,0 +1,76 @@
+/*!
+ {{ IMPORT: root, reboot }}
+ */
+
+.dropdown {
+    display: none;
+    position: absolute;
+    top: -100%;
+    left: -100%;
+}
+
+.dropdown.show {
+    display: block;
+}
+
+.dropdown.fade {
+    transition: opacity 0.15s linear;
+}
+@media (prefers-reduced-motion: reduce) {
+    .fade {
+        transition: none;
+    }
+}
+.dropdown.fade:not(.show) {
+    opacity: 0;
+}
+
+.dropdown.top{
+    transform: translate(-50%, calc(-100% - 0.5rem));
+}
+
+.dropdown.bottom{
+    transform: translate(-50%, 0.5rem);
+}
+
+.dropdown.left{
+    transform: translate(calc(-100% - 0.5rem), -50%);
+}
+
+.dropdown.right{
+    transform: translate(0.5rem, -50%);
+}
+
+.dropdown .arrow,
+.dropdown .arrow::before {
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  background: inherit;
+}
+
+.dropdown .arrow {
+  visibility: hidden;
+}
+
+.dropdown .arrow::before {
+  visibility: visible;
+  content: '';
+  transform: rotate(45deg);
+}
+
+.dropdown[data-popper-placement^='top'] > .arrow {
+    bottom: -4px;
+}
+
+.dropdown[data-popper-placement^='bottom'] > .arrow {
+    top: -4px;
+}
+
+.dropdown[data-popper-placement^='left'] > .arrow {
+    right: -4px;
+}
+
+.dropdown[data-popper-placement^='right'] > .arrow {
+    left: -4px;
+}

@@ -1,0 +1,35 @@
+/*!
+ {{ IMPORT: root, reboot, buttons/buttons }}
+ */
+
+.btn-progress svg, .btn-progress.inprogress .text {
+    display: none;
+}
+
+.btn-progress.inprogress svg{
+    display: block;
+}
+.btn-progress.inprogress{
+    cursor: not-allowed;
+}
+.btn-progress .spinner {
+    animation: btn-loader-rotate 2s linear infinite;
+    width: 25px;
+    height: 25px;
+    margin: -0.5px 0 -0.5px 0;
+}
+.btn-progress .spinner .path{
+    stroke: #fff;
+    stroke-linecap: round;
+    animation: btn-loader-dash 1.5s ease-in-out infinite;
+}
+
+@keyframes btn-loader-rotate {
+    100% {transform: rotate(360deg);}
+}
+
+@keyframes btn-loader-dash {
+    0% {stroke-dasharray: 1, 150;stroke-dashoffset: 0;}
+    50% {stroke-dasharray: 90, 150;stroke-dashoffset: -35;}
+    100% {stroke-dasharray: 90, 150;stroke-dashoffset: -124;}
+}

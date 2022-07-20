@@ -271,12 +271,12 @@ a {
 	cursor: pointer
 }
 
-button:focus,
-[type="button"]:focus,
-[type="reset"]:focus,
-[type="submit"]:focus,
-[role="button"]:focus,
-a:focus, *:not(input):not(textarea):focus{
+button:not(.on-outline):focus,
+[type="button"]:not(.on-outline):focus,
+[type="reset"]:not(.on-outline):focus,
+[type="submit"]:not(.on-outline):focus,
+[role="button"]:not(.on-outline):focus,
+a:not(.on-outline):focus, *:not(input):not(textarea):not(.on-outline):focus{
     outline: 0;
 	border-radius: var(--border-radius, 6px);
     box-shadow: 0 0 0 0.125rem var(--background-color), 0 0 0 0.25rem var(--outline);

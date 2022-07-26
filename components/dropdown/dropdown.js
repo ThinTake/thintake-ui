@@ -9,7 +9,6 @@
     var popperInstance = null; // popper instance
     
     var dropdown = (element)=>{
-        console.log(element.dataset.dropdownOn);
         if(element.dataset.dropdownOn != undefined && element.dataset.dropdownOn == 'hover'){
             element.addEventListener('mouseenter', showDropdown);
             element.addEventListener('mouseleave', hideDropdown);
@@ -26,8 +25,9 @@
     var handleClick = (e) => {
         e.preventDefault();
         var hasTarget = false;
-        for (let i = 0; i < e.path.length; i++) {
-            var target = e.path[i];
+        var path = e.path || (e.composedPath && e.composedPath());
+        for (let i = 0; i < path.length; i++) {
+            var target = path[i];
             if(clickElements.includes(target)){
                 hasTarget = true;
                 showDropdown(null, target);

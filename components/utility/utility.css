@@ -15,6 +15,11 @@
     text-align: center !important;
 }
 
+.text-clear{
+    text-decoration: none !important;
+    color: currentColor !important;
+}
+
 
 /*
  * Screen reader only

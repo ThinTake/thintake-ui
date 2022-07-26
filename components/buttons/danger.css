@@ -16,22 +16,22 @@
 /*-- Outline --*/
 .btn-danger-outline{
     border-color: var(--danger);
-    background: var(--text-danger-alt);
+    background: transparent;
     color: var(--danger);
 }
 
-.btn-danger-outline:hover:not([disabled]), .btn-danger-outline:focus{
+.btn-danger-outline:hover:not(:disabled), .btn-danger-outline:focus{
     background: var(--danger-lite-hover);
 }
 
 /*-- Ghost --*/
 .btn-danger-ghost{
     border-color: transparent;
-    background: var(--text-danger-alt);
+    background: transparent;
     color: var(--danger);
 }
 
-.btn-danger-ghost:hover:not([disabled]), .btn-danger-ghost:focus{
+.btn-danger-ghost:hover:not(:disabled), .btn-danger-ghost:focus{
     border-color: transparent;
     background: var(--danger-lite-hover);
 }

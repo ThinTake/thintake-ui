@@ -2,7 +2,7 @@
  {{ IMPORT: root, reboot }}
  */
 
- .tooltip{
+.tooltip{
     position: absolute;
     font-size: 0.8125rem;
     background-color: var(--text-primary);
@@ -12,6 +12,7 @@
     pointer-events: none;
     top: -100%;
     left: -100%;
+    z-index: 10;
 }
 
 .tooltip.fade {

@@ -5,7 +5,7 @@
 .btn-info{
     border-color: var(--info);
     background-color: var(--info);
-    color: var(--text);
+    color: var(--text-primary-alt);
 }
 
 .btn-info:hover:not(:disabled), .btn-info:focus{
@@ -16,22 +16,22 @@
 /*-- Outline --*/
 .btn-info-outline{
     border-color: var(--info);
-    background: var(--text-info-alt);
+    background: transparent;
     color: var(--info);
 }
 
-.btn-info-outline:hover:not([disabled]), .btn-info-outline:focus{
+.btn-info-outline:hover:not(:disabled), .btn-info-outline:focus{
     background: var(--info-lite-hover);
 }
 
 /*-- Ghost --*/
 .btn-info-ghost{
     border-color: transparent;
-    background: var(--text-info-alt);
+    background: transparent;
     color: var(--info);
 }
 
-.btn-info-ghost:hover:not([disabled]), .btn-info-ghost:focus{
+.btn-info-ghost:hover:not(:disabled), .btn-info-ghost:focus{
     border-color: transparent;
     background: var(--info-lite-hover);
 }

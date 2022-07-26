@@ -11,14 +11,14 @@
     height: 2.375rem;
     width: auto;
     background-color: transparent;
-    color: var(--text-primary);
+    color: currentColor;
     text-align: center;
     text-decoration: none;
     vertical-align: middle;
     font-size: 0.9375rem;
     line-height: 1;
     font-weight: var(--font-medium);
-    border: 0.0625rem solid transparent;
+    border: 0.0625rem solid var(--light);
     border-radius: var(--border-radius, 6px);
     padding: 0 1rem;
     user-select: none;
@@ -51,8 +51,15 @@
 }
 
 /*----- START::Image && Icon Button -----*/
-.btn img{
+.btn img, .btn svg{
     display: inline-block;
+    width: 1.5rem;
+    height: 1.5rem;
+}
+
+.btn-sm img, .btn-sm svg{
+    width: 1.25rem;
+    height: 1.25rem;
 }
 
 .btn-icon{

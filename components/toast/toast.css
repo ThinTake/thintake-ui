@@ -76,6 +76,7 @@
     border-radius: var(--border-radius);
     box-shadow: 0 0.25rem 0.75rem rgb(0 0 0 / 10%);
     overflow: hidden;
+    z-index: 9;
 }
 
 .toast .toastContent{

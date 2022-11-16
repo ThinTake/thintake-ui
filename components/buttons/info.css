@@ -5,7 +5,7 @@
 .btn-info{
     border-color: var(--info);
     background-color: var(--info);
-    color: var(--text-primary-alt);
+    color: var(--text-white);
 }
 
 .btn-info:hover:not(:disabled), .btn-info:focus{

@@ -68,7 +68,7 @@
 }
 
 .border-dark {
-    border-color: var(--text-primary) !important;
+    border-color: var(--text-dark) !important;
 }
 
 .border-white {

@@ -46,7 +46,7 @@
         <div class="mb-3 flex" style="flex-direction: column;max-width: 400px;">
             <div class="input">
                 <div class="input-wrapper">
-                    <input type="text" name="input" id="input" data-placeholder="Placeholder" autocomplete="off">
+                    <input type="text" name="input" id="input" placeholder="Placeholder" autocomplete="off">
                     <label for="isnput">Label</label>
                 </div>
             </div>
@@ -78,7 +78,7 @@
                 <div class="input-wrapper">
                     <i class="uil uil-airplay"></i>
                     <div>
-                        <input type="text" name="input" id="input" data-placeholder="Placeholder" autocomplete="off">
+                        <input type="text" name="input" id="input" placeholder="Placeholder" autocomplete="off">
                         <label for="isnput">Label</label>
                     </div>
                 </div>
@@ -87,7 +87,7 @@
             <div class="input group">
                 <div class="input-wrapper">
                     <div>
-                        <input type="text" name="input" id="input" data-placeholder="Placeholder" autocomplete="off">
+                        <input type="text" name="input" id="input" placeholder="Placeholder" autocomplete="off">
                         <label for="isnput">Label</label>
                     </div>
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"><path fill="currentColor" d="M12,13a1.49,1.49,0,0,0-1,2.61V17a1,1,0,0,0,2,0V15.61A1.49,1.49,0,0,0,12,13Zm5-4V7A5,5,0,0,0,7,7V9a3,3,0,0,0-3,3v7a3,3,0,0,0,3,3H17a3,3,0,0,0,3-3V12A3,3,0,0,0,17,9ZM9,7a3,3,0,0,1,6,0V9H9Zm9,12a1,1,0,0,1-1,1H7a1,1,0,0,1-1-1V12a1,1,0,0,1,1-1H17a1,1,0,0,1,1,1Z"/></svg>
@@ -100,7 +100,7 @@
             <div class="input group">
                 <div class="input-wrapper">
                     <div>
-                        <input type="text" name="input" id="input" data-placeholder="Placeholder" autocomplete="off">
+                        <input type="text" name="input" id="input" placeholder="Placeholder" autocomplete="off">
                         <label for="isnput">Label</label>
                     </div>
                     <button><i class="uil uil-eye"></i></button>
@@ -110,7 +110,7 @@
                 <div class="input-wrapper">
                     <button><i class="uil uil-eye"></i></button>
                     <div>
-                        <input type="text" name="input" id="input" data-placeholder="Placeholder" autocomplete="off">
+                        <input type="text" name="input" id="input" placeholder="Placeholder" autocomplete="off">
                         <label for="isnput">Label</label>
                     </div>
                 </div>
@@ -119,7 +119,7 @@
             <div class="input group">
                 <div class="input-wrapper">
                     <div>
-                        <input type="text" name="input" id="input" disabled value="Value" data-placeholder="Placeholder" autocomplete="off">
+                        <input type="text" name="input" id="input" disabled value="Value" placeholder="Placeholder" autocomplete="off">
                         <label for="isnput">Disabled with button</label>
                     </div>
                     <button><i class="uil uil-eye"></i></button>
@@ -131,7 +131,7 @@
         <div class="mb-3 flex" style="flex-direction: column;max-width: 400px;">
             <div class="input">
                 <div class="input-wrapper">
-                    <input type="text" name="input" id="input" data-placeholder="Placeholder" autocomplete="off">
+                    <input type="text" name="input" id="input" placeholder="Placeholder" autocomplete="off">
                     <label for="isnput">Label</label>
                 </div>
                 <div class="help">This is for help</div>
@@ -142,14 +142,14 @@
         <div class="mb-3 flex" style="flex-direction: column;max-width: 400px;">
             <div class="input primary valid">
                 <div class="input-wrapper">
-                    <input type="text" name="input" id="input" data-placeholder="Placeholder" autocomplete="off">
+                    <input type="text" name="input" id="input" placeholder="Placeholder" autocomplete="off">
                     <label for="isnput">Label</label>
                 </div>
             </div>
             <div class="input group primary valid">
                 <div class="input-wrapper">
                     <div>
-                        <input type="text" name="input" id="input" data-placeholder="Placeholder" autocomplete="off">
+                        <input type="text" name="input" id="input" placeholder="Placeholder" autocomplete="off">
                         <label for="isnput">Label</label>
                     </div>
                     <button><i class="uil uil-eye"></i></button>
@@ -159,7 +159,7 @@
                 <div class="input-wrapper">
                     <button><i class="uil uil-eye"></i></button>
                     <div>
-                        <input type="text" name="input" id="input" data-placeholder="Placeholder" autocomplete="off">
+                        <input type="text" name="input" id="input" placeholder="Placeholder" autocomplete="off">
                         <label for="isnput">Label</label>
                     </div>
                 </div>
@@ -168,7 +168,7 @@
             <div class="input group primary valid">
                 <div class="input-wrapper">
                     <div>
-                        <input type="text" name="input" disabled id="input" data-placeholder="Placeholder" autocomplete="off">
+                        <input type="text" name="input" disabled id="input" placeholder="Placeholder" autocomplete="off">
                         <label for="isnput">Disabled</label>
                     </div>
                     <button><i class="uil uil-eye"></i></button>
@@ -180,7 +180,7 @@
         <div class="mb-3 flex" style="flex-direction: column;max-width: 400px;">
             <div class="input primary valid">
                 <div class="input-wrapper">
-                    <input type="text" name="input" id="input" data-placeholder="Placeholder" autocomplete="off">
+                    <input type="text" name="input" id="input" placeholder="Placeholder" autocomplete="off">
                     <label for="isnput">Label</label>
                 </div>
                 <div class="help">Wow, Success</div>
@@ -188,7 +188,7 @@
             <div class="input group primary valid">
                 <div class="input-wrapper">
                     <div>
-                        <input type="text" name="input" id="input" data-placeholder="Placeholder" autocomplete="off">
+                        <input type="text" name="input" id="input" placeholder="Placeholder" autocomplete="off">
                         <label for="isnput">Label</label>
                     </div>
                     <button><i class="uil uil-eye"></i></button>
@@ -199,7 +199,7 @@
                 <div class="input-wrapper">
                     <button><i class="uil uil-eye"></i></button>
                     <div>
-                        <input type="text" name="input" id="input" data-placeholder="Placeholder" autocomplete="off">
+                        <input type="text" name="input" id="input" placeholder="Placeholder" autocomplete="off">
                         <label for="isnput">Label</label>
                     </div>
                 </div>

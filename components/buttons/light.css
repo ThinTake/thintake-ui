@@ -5,7 +5,7 @@
 .btn-light{
     border-color: transparent;
     background-color: var(--light);
-    color: var(--text-primary);
+    color: var(--text-dark);
 }
 
 .btn-light:hover:not(:disabled), .btn-light:focus{
@@ -17,7 +17,7 @@
 .btn-light-outline{
     border-color: var(--light-hover);
     background-color: transparent;
-    color: var(--text-primary);
+    color: var(--text-dark);
 }
 
 .btn-light-outline:hover:not(:disabled), .btn-light-outline:focus{
@@ -28,7 +28,7 @@
 .btn-light-ghost{
     border-color: transparent;
     background-color: transparent;
-    color: var(--text-primary);
+    color: var(--text-dark);
 }
 
 .btn-light-ghost:hover:not(:disabled), .btn-light-ghost:focus{

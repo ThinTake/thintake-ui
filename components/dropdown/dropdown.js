@@ -20,12 +20,11 @@
             }
             clickElements.push(element);
         }
-    }
+    };
 
     var handleClick = (e) => {
-        e.preventDefault();
         var hasTarget = false;
-        var path = e.path || (e.composedPath && e.composedPath());
+        var path = e.composedPath();
         for (let i = 0; i < path.length; i++) {
             var target = path[i];
             if(clickElements.includes(target)){
@@ -37,7 +36,7 @@
         if(!hasTarget){
             hideDropdown();
         }
-    }
+    };
 
     var showDropdown = (e, target=null)=>{
         if(target == null){
@@ -97,7 +96,7 @@
             targetDropdown.classList.add('show');
             shownDropdown = targetDropdown;
         });
-    }
+    };
 
     var hideDropdown = ()=>{
         return new Promise((resolve, reject) => {
@@ -113,13 +112,13 @@
                 resolve();
             }
         })
-    }
+    };
 
     var destroyPopper = () => {
         if(popperInstance != null){
             popperInstance.destroy();
         }
-    }
+    };
 
     var init = (parentSelector = null) => {
         if (typeof Popper === 'undefined') {
@@ -134,11 +133,11 @@
         selector.querySelectorAll('[data-dropdown]').forEach((element)=>{
             dropdown(element);
         });
-    }
+    };
 
     return{
         init: init
-    }
+    };
 })();
 
 tt.dropdown = tt_dropdown;

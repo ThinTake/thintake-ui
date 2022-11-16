@@ -5,7 +5,7 @@
 .btn-primary{
     border-color: var(--primary);
     background-color: var(--primary);
-    color: var(--text-primary-alt);
+    color: var(--text-white);
 }
 
 .btn-primary:hover:not(:disabled), .btn-primary:focus{

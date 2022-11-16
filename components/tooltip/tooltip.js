@@ -81,7 +81,7 @@
         let tip = tt.d.createElement('div');
         tip.classList.add('tooltip', 'fade');
         tip.id = tt.getUID('tooltip_');
-        tip.textContent = title;
+        tip.innerHTML = title;
         tip.setAttribute('role', 'tooltip'); 
 
         let arrow = tt.d.createElement('div');

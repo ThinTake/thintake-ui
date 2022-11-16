@@ -3,47 +3,52 @@
  */
 
 const tt_input = (function() {
-    const handleFocus = (e) => {
+    function handleFocus(e) {
         e.target.closest('.input').classList.add('_focused');
-        e.target.closest('.input').classList.add('_hasValue');
-
         showlaceholder(e.target);
     };
 
-    const showlaceholder = (input)=>{
+    function showlaceholder(input) {
         if(input.dataset.placeholder != undefined){
             input.setAttribute('placeholder', input.dataset.placeholder);
         }
     };
 
-    const handleBlur = (e) => {
+    function handleBlur(e) {
         e.target.closest('.input').classList.remove('_focused');
         if(!e.target.value) {
             e.target.closest('.input').classList.remove('_hasValue');
         }
+        else{
+            e.target.closest('.input').classList.add('_hasValue');
+        }
         e.target.removeAttribute('placeholder');
     };
 
-    const handleInput = (e) => {
-        if(e.target.getAttribute('rows') != null) return;
-        
-        if(e.target.value == ''){
-            e.target.style.height = '0';
-            return;
-        }
-        e.target.style.height = 'auto';
-        e.target.style.height = (e.target.scrollHeight)+"px";
-        
-        let styles = window.getComputedStyle(e.target);
-        if(parseFloat(styles.maxHeight) < e.target.scrollHeight){
-            e.target.style.overflow = 'auto';
-        }
-        else{
-            e.target.style.overflow = 'hidden';
-        }
+    function handleInput (e) {
+        updateHeight(e.target);
     };
 
-    const init = (parentSelector = null) => {
+    function updateHeight(element) {
+        if(element.getAttribute('rows') != null) return;
+        
+        if(element.value == ''){
+            element.style.height = '0';
+            return;
+        }
+        element.style.height = 'auto';
+        element.style.height = (element.scrollHeight)+"px";
+        
+        let styles = window.getComputedStyle(element);
+        if(parseFloat(styles.maxHeight) < element.scrollHeight){
+            element.style.overflow = 'auto';
+        }
+        else{
+            element.style.overflow = 'hidden';
+        }
+    }
+
+    function init(parentSelector = null){
         let selector = tt.d;
         if(parentSelector !== null){
             selector = tt.d.querySelector(parentSelector);
@@ -77,6 +82,7 @@ const tt_input = (function() {
             input.addEventListener('blur', handleBlur);
             if(type == 'textarea'){
                 input.addEventListener('input', handleInput);
+                updateHeight(input);
             }
         });
     };

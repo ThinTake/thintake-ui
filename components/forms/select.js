@@ -8,6 +8,22 @@
 
         if(select == null) return;
 
+        if(select.firstElementChild.disabled && select.firstElementChild.textContent == '' || select.firstElementChild.textContent == 'Select'){
+            select.firstElementChild.textContent = '';
+        }
+        else{
+            //create an option element and prepend it to the select element
+            let option = document.createElement('option');
+            option.value = '';
+            option.innerHTML = '';
+            option.hidden = true;
+            select.prepend(option);
+            
+            if(select.querySelector("[selected]") == null){
+                select.selectedIndex = 0;
+            }
+        }
+
         if (select.selectedIndex != 0) {
             element.classList.add('_hasValue');
         }

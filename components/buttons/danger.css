@@ -5,7 +5,7 @@
 .btn-danger{
     border-color: var(--danger);
     background-color: var(--danger);
-    color: var(--text-primary-alt);
+    color: var(--text-white);
 }
 
 .btn-danger:hover:not(:disabled), .btn-danger:focus{

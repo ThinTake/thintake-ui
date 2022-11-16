@@ -3,19 +3,19 @@
  */
 
 .btn-progress svg, .btn-progress.inprogress .text {
-    display: none;
+    display: none !important;
 }
 
 .btn-progress.inprogress svg{
-    display: block;
+    display: block !important;
 }
 .btn-progress.inprogress{
     cursor: not-allowed;
 }
 .btn-progress .spinner {
     animation: btn-loader-rotate 2s linear infinite;
-    width: 25px;
-    height: 25px;
+    width: 25px !important;
+    height: 25px !important;
     margin: -0.5px 0 -0.5px 0;
 }
 .btn-progress .spinner .path{

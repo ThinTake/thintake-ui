@@ -5,7 +5,7 @@
 .btn-success{
     border-color: var(--success);
     background-color: var(--success);
-    color: var(--text-primary-alt);
+    color: var(--text-white);
 }
 
 .btn-success:hover:not(:disabled), .btn-success:focus{

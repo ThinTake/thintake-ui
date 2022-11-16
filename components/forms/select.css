@@ -14,7 +14,7 @@
     -moz-appearance: none;
     -webkit-appearance: none;
     appearance: none;
-    cursor: text;
+    cursor: pointer;
 }
 
 .select select:not([multiple]):not([size]){
@@ -35,7 +35,7 @@
 }
 
 .select label {
-    color: var(--text-secondary);
+    color: var(--text-light-dark);
     position: absolute;
     left: 0.75rem;
     top: 50%;
@@ -45,7 +45,6 @@
     transition: 0.3s ease-in-out;
     cursor: text;
     background-color: #fff;
-    pointer-events: none;
 }
 
 .select._hasValue label {
@@ -54,7 +53,7 @@
     transform: none;
     font-size: 0.8rem;
     font-weight: 500;
-    color: var(--text-primary);
+    color: var(--text-dark);
     opacity: 0.8;
 }
 
@@ -68,5 +67,5 @@
 }
 
 .select select:disabled {
-    color: var(--text-secondary);
+    color: var(--text-light-dark);
 }

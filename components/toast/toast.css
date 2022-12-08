@@ -2,7 +2,7 @@
  {{ IMPORT: root, reboot }}
  */
 
- .toastContainer{
+.toastContainer{
     position: fixed;
     margin: 10px;
     min-width: 200px;

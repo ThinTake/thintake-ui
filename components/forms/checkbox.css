@@ -42,7 +42,7 @@
 .checkbox input:focus+span::before,
 .radio input:focus+span::before {
     outline: 0;
-    box-shadow: 0 0 0 0.125rem var(--background-color), 0 0 0 0.25rem var(--primary);
+    /* box-shadow: 0 0 0 0.125rem var(--background-color), 0 0 0 0.25rem var(--primary); */
 }
 
 .checkbox label:hover span::before,

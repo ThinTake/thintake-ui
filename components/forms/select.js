@@ -8,7 +8,7 @@
 
         if(select == null) return;
 
-        if(select.firstElementChild.disabled && select.firstElementChild.textContent == '' || select.firstElementChild.textContent == 'Select'){
+        if((select.firstElementChild.disabled || select.firstElementChild.hidden) && select.firstElementChild.textContent == '' || select.firstElementChild.textContent == 'Select'){
             select.firstElementChild.textContent = '';
         }
         else{

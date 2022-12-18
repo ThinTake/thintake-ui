@@ -150,7 +150,7 @@
         bottom: unset;
     }
     .toastContainer[data-mobile-position="bottom"]{
-        top: unset;
+        top: unset !important;
         bottom: 0;
     }
 }

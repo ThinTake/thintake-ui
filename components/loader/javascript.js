@@ -4,13 +4,18 @@
 
 tt.loadScript = function(url) {
     return new Promise(function (resolve, reject) {
+        const parent = document.head || document.body || document.documentElement;
+        if (parent.querySelector(`script[src*="${url}"]`)) {
+            resolve(url);
+            return;
+        }
         const script = document.createElement('script');
         script.src = url;
         script.addEventListener('load', function () {
             // The script is loaded completely
-            resolve(true);
+            resolve(url);
         });
-        document.body.appendChild(script);
+        parent.appendChild(script);
     });
 };
 

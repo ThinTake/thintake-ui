@@ -89,8 +89,8 @@
     border: none;
     border-radius: 50%;
     left: 0.24rem;
-    top: 0.25rem;
-    transform: none;
+    top: 50%;
+    transform: translateY(-50%);
 }
 
 .checkbox.filled input:checked+span::before,

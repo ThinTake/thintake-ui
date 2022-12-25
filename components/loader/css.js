@@ -1,8 +1,16 @@
-/**
- * {{IMPORT root}}
+/*!
+ {{IMPORT root}}
  */
+
 tt.loadCssFile = function(url) {
     return new Promise(function (resolve, reject) {
+
+        const parent = document.head || document.body || document.documentElement;
+        if (parent.querySelector(`link[href*="${url}"]`)) {
+            resolve(url);
+            return;
+        }
+        
         var link = document.createElement('link');
         link.setAttribute('rel', 'stylesheet');
         link.setAttribute('href', url);
@@ -10,8 +18,8 @@ tt.loadCssFile = function(url) {
 
         link.addEventListener('load', function () {
             // The script is loaded completely
-            resolve(true);
+            resolve(url);
         });
-        document.head.appendChild(link);
+        parent.appendChild(link);
     });
 };

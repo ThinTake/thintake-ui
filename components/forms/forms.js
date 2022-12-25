@@ -73,7 +73,7 @@ const tt_input = (function() {
             if (input.value) {
                 element.classList.add('_hasValue');
             }
-            if(document.activeElement == input){
+            if(tt.d.activeElement == input){
                 element.classList.add('_focused');
                 showlaceholder(input);
             }

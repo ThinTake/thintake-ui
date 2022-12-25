@@ -1,5 +1,5 @@
-/**
- * {{IMPORT root}}
+/*!
+ {{ IMPORT: root }}
  */
 
 tt.loadScript = function(url) {

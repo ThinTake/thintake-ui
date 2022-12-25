@@ -1,6 +1,7 @@
-/**
- * {{IMPORT root}}
+/*!
+ {{IMPORT root}}
  */
+
  tt.passwordMeter = function (pwd = '') {
 	var nScore=0, nLength=0, nAlphaUC=0, nAlphaLC=0, nNumber=0, nSymbol=0, nMidChar=0, nRequirements=0, nAlphasOnly=0, nNumbersOnly=0, nUnqChar=0, nRepChar=0, nRepInc=0, nConsecAlphaUC=0, nConsecAlphaLC=0, nConsecNumber=0, nSeqAlpha=0, nSeqNumber=0, nSeqSymbol=0, nReqChar=0;
 	var sAlphas = "abcdefghijklmnopqrstuvwxyz";

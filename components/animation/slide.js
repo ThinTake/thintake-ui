@@ -1,9 +1,5 @@
 /*!
- {{ IMPORT: root }}
- */
-
-/**
- * !!! NOT TESTED
+ {{IMPORT root}}
  */
 
 tt.slideUp = function (target, duration=300) {
@@ -62,8 +58,8 @@ tt.slideDown = function(target, duration=300) {
 
 tt.slideToggle = function(target, duration = 300) {
     if (window.getComputedStyle(target).display === 'none') {
-        return slideDown(target, duration);
+        return tt.slideDown(target, duration);
     } else {
-        return slideUp(target, duration);
+        return tt.slideUp(target, duration);
     }
 }

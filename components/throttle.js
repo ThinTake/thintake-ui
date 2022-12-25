@@ -1,6 +1,8 @@
-/**
- * {{IMPORT root}}
+
+/*!
+ {{IMPORT root}}
  */
+
 tt.throttle = function (cb, delay = 1000) {
     let shouldWait = false;
     let waitingArgs;

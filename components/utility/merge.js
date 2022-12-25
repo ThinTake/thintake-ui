@@ -1,5 +1,5 @@
-/**
- * {{IMPORT root}}
+/*!
+ {{IMPORT root}}
  */
 
 tt.merge = function (obj = { }, defaults) {

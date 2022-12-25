@@ -13,7 +13,7 @@
         }
         else{
             //create an option element and prepend it to the select element
-            let option = document.createElement('option');
+            let option = tt.d.createElement('option');
             option.value = '';
             option.innerHTML = '';
             option.hidden = true;

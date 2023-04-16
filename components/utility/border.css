@@ -52,11 +52,11 @@
 }
 
 .border-info {
-    border-color: var(#39C0ED) !important;
+    border-color: var(--info) !important;
 }
 
 .border-warning {
-    border-color: var(#F93154) !important;
+    border-color: var(--warning) !important;
 }
 
 .border-danger {

@@ -4,120 +4,174 @@
 
  .input input,
  .input textarea {
-     width: 100%;
-     height: 3.5rem;
-     padding: 1.5rem 0.82rem .5rem;
-     border-color: transparent;
-     border-radius: var(--border-radius, 6px);
-     transition: all 0.2s ease-in-out;
-     background: transparent;
-     border: 0;
-     cursor: text;
+	 width: 100%;
+	 height: 3.5rem;
+	 padding: 1.5rem 0.82rem 0.5rem;
+	 border-color: transparent;
+	 border-radius: var(--border-radius, 6px);
+	 transition: all 0.2s ease-in-out;
+	 background: transparent;
+	 border: 0;
+	 cursor: text;
  }
  
  .input input:focus,
  .input textarea:focus {
-     outline: none;
+	 outline: none;
  }
  
  .input label {
-     color: var(--text-light-dark);
-     position: absolute;
-     left: 0.75rem;
-     top: 50%;
-     transform: translateY(-50%);
-     font-size: 1rem;
-     line-height: 1rem;
-     transition: 0.3s ease-in-out;
-     cursor: text;
-     background-color: transparent;
+	 color: var(--text-light-dark);
+	 position: absolute;
+	 left: 0.75rem;
+	 top: 50%;
+	 transform: translateY(-50%);
+	 font-size: 1rem;
+	 line-height: 1rem;
+	 transition: 0.3s ease-in-out;
+	 cursor: text;
+	 background-color: transparent;
  }
  
- .input._textarea label, .input textarea + label{
-     background-color: #fff;
+ .input._textarea label,
+ .input textarea+label {
+	 background-color: #fff;
  }
  
- .input._hasValue label, .input._focused label {
-     top: 0.48rem;
-     left: 0.81rem;
-     transform: none;
-     font-size: 0.8rem;
-     font-weight: 500;
-     color: var(--text-dark);
- }
- .input._textarea._hasValue label, .input._hasValue textarea + label,
- .input._textarea._focused label, .input._focused textarea + label{
-     top: 0px;
-     left: 0;
-     right: 0.5rem;
-     padding-top: 0.48rem;
-     padding-left: 0.81rem;
+ .input._hasValue label,
+ .input._focused label {
+	 top: 0.48rem;
+	 left: 0.81rem;
+	 transform: none;
+	 font-size: 0.8rem;
+	 font-weight: 500;
+	 color: var(--text-dark);
  }
  
- .input-wrapper{
-     overflow: hidden;
+ .input._textarea._hasValue label,
+ .input._hasValue textarea+label,
+ .input._textarea._focused label,
+ .input._focused textarea+label {
+	 top: 0px;
+	 left: 0;
+	 right: 0.5rem;
+	 margin: var(--input-border-width) 0 0 var(--input-border-width);
+	 border-radius: var(--border-radius);
+	 padding-top: calc(0.48rem - var(--input-border-width));
+	 padding-left: calc(0.81rem - var(--input-border-width));
+ }
+
+ .input._textarea._focused label,
+ .input._focused textarea+label{
+	margin: var(--input-focused-border-width) 0 0 var(--input-focused-border-width);
+	border-radius: var(--border-radius);
+	padding-top: calc(0.48rem - var(--input-focused-border-width));
+	padding-left: calc(0.81rem - var(--input-focused-border-width));
+ }
+ 
+ .input-wrapper {
+	 overflow: hidden;
  }
  
  /* Start:: Textarea */
  .input textarea {
-     height: 4.75rem;
-     min-height: 4.75rem;
-     max-height: 10rem;
-     padding: 1.5rem 0.82rem 0.5rem;
-     transition: 0.3s ease-in-out, height 100ms;
-     resize: none;
-     overflow: hidden;
-     /*margin-bottom: -6px; ------------------*/
+	 height: 4.75rem;
+	 min-height: 4.75rem;
+	 max-height: 10rem;
+	 padding: 1.5rem 0.82rem 0.5rem;
+	 transition: 0.3s ease-in-out, height 100ms;
+	 resize: none;
+	 overflow: hidden;
+	 /*margin-bottom: -6px; ------------------*/
  }
  
  .input textarea[rows] {
-     /* .input._noHeight textarea */
-     height: auto;
-     min-height: 3.5rem;
-     max-height: none;
-     overflow: auto;
-     resize: vertical;
-     transition: 0.3s ease-in-out, height 0ms;
+	 /* .input._noHeight textarea */
+	 height: auto;
+	 min-height: 3.5rem;
+	 max-height: none;
+	 overflow: auto;
+	 resize: vertical;
+	 transition: 0.3s ease-in-out, height 0ms;
  }
  
  .input textarea~label {
-     top: 1.5rem;
+	 top: 1.5rem;
  }
  
  /* END:: Textarea */
  
  .input._focused label {
-     opacity: 1;
+	 opacity: 1;
  }
  
- .input._focused .input-wrapper::after {
-     border-color: var(--primary);
+ .input input::placeholder {
+	 color: transparent;
+	 opacity: 0;
+	 transition: all 0.3s ease-out;
  }
  
- .input input::placeholder {color: transparent; opacity: 0; transition: all 0.3s ease-out;}
- .input input:-moz-placeholder {color: transparent; opacity: 0; transition: all 0.3s ease-out; }
- .input input::-moz-placeholder {color: transparent; opacity: 0; transition: all 0.3s ease-out; }
- .input input:-ms-input-placeholder {color: transparent; opacity: 0; transition: all 0.3s ease-out;}
- .input input::-webkit-input-placeholder {color: transparent; opacity: 0; transition: all 0.3s ease-out;}
+ .input input:-moz-placeholder {
+	 color: transparent;
+	 opacity: 0;
+	 transition: all 0.3s ease-out;
+ }
  
- .input._focused input::placeholder {opacity: 0.8; color: var(--text-light-dark);}
- .input._focused input:-moz-placeholder {opacity: 0.8; color:var(--text-light-dark); }
- .input._focused input::-moz-placeholder {opacity: 0.8; color:var(--text-light-dark); }
- .input._focused input:-ms-input-placeholder {opacity: 0.8; color:var(--text-light-dark);}
- .input._focused input::-webkit-input-placeholder {opacity: 0.8; color:var(--text-light-dark);}
+ .input input::-moz-placeholder {
+	 color: transparent;
+	 opacity: 0;
+	 transition: all 0.3s ease-out;
+ }
+ 
+ .input input:-ms-input-placeholder {
+	 color: transparent;
+	 opacity: 0;
+	 transition: all 0.3s ease-out;
+ }
+ 
+ .input input::-webkit-input-placeholder {
+	 color: transparent;
+	 opacity: 0;
+	 transition: all 0.3s ease-out;
+ }
+ 
+ .input._focused input::placeholder {
+	 opacity: 0.8;
+	 color: var(--text-light-dark);
+ }
+ 
+ .input._focused input:-moz-placeholder {
+	 opacity: 0.8;
+	 color: var(--text-light-dark);
+ }
+ 
+ .input._focused input::-moz-placeholder {
+	 opacity: 0.8;
+	 color: var(--text-light-dark);
+ }
+ 
+ .input._focused input:-ms-input-placeholder {
+	 opacity: 0.8;
+	 color: var(--text-light-dark);
+ }
+ 
+ .input._focused input::-webkit-input-placeholder {
+	 opacity: 0.8;
+	 color: var(--text-light-dark);
+ }
  
  /* .input._disabled .input-wrapper, .input._readonly .input-wrapper,
- .input._disabled label, .input._readonly label{
-     background-color: var(--disabled);
- } */
+   .input._disabled label, .input._readonly label{
+	   background-color: var(--disabled);
+   } */
  
  /* .input._disabled input{
-     cursor: not-allowed;
- }
- 
- .input._disabled input, .input._readonly input{
-     color: var(--text-light-dark);
- } */
+	   cursor: not-allowed;
+   }
+   
+   .input._disabled input, .input._readonly input{
+	   color: var(--text-light-dark);
+   } */
  
  .input input:disabled,
  .input input:read-only,
@@ -125,110 +179,113 @@
  .input textarea:disabled+label,
  .input textarea:read-only,
  .input textarea:read-only+label {
-     background-color: var(--disabled);
+	 background-color: var(--disabled);
  }
  
  .input._disabled .input-wrapper {
-     background-color: var(--disabled);
+	 background-color: var(--disabled);
  }
  
  .input input:disabled,
  .input textarea:disabled {
-     cursor: not-allowed;
+	 cursor: not-allowed;
  }
  
  .input input:disabled,
  .input input:read-only,
  .input textarea:disabled,
  .input textarea:read-only {
-     color: var(--text-light-dark);
+	 color: var(--text-light-dark);
  }
  
  /*
-  * Input groups
-  */
+	* Input groups
+	*/
  
  .input.group .input-wrapper {
-     display: flex;
-     align-items: center;
+	 display: flex;
+	 align-items: center;
  }
  
  .input.group .input-wrapper>div {
-     flex: 1 1 auto;
+	 flex: 1 1 auto;
  }
  
  /* Icons */
  .group .input-wrapper>i,
  .group .input-wrapper>svg {
-     font-size: 1.5rem;
-     margin-left: 0.75rem;
+	 font-size: 1.5rem;
+	 margin-left: 0.75rem;
  }
  
  .group .input-wrapper>div+i,
  .group .input-wrapper>div+svg {
-     margin-left: 0;
-     margin-right: 0.75rem;
+	 margin-left: 0;
+	 margin-right: 0.75rem;
  }
  
  /* Actions */
  .group .input-wrapper>button {
-     flex: 0 0 auto;
-     position: relative;
-     display: inline-flex;
-     align-items: center;
-     justify-content: center;
-     border: none;
-     border-radius: calc(var(--border-radius) - 0.1rem);
-     text-decoration: none;
-     line-height: 1;
-     cursor: pointer;
-     text-align: center;
-     transition: 250ms ease-in-out;
-     -webkit-appearance: none;
-     -moz-appearance: none;
-     font-size: 1rem;
-     box-shadow: none;
-     background: transparent;
-     outline: none;
-     padding: 0.2rem;
-     margin-left: calc(1rem - 0.2rem);
-     z-index: 1;
+	 flex: 0 0 auto;
+	 position: relative;
+	 display: inline-flex;
+	 align-items: center;
+	 justify-content: center;
+	 border: none;
+	 border-radius: calc(var(--border-radius) - 0.1rem);
+	 text-decoration: none;
+	 line-height: 1;
+	 cursor: pointer;
+	 text-align: center;
+	 transition: 250ms ease-in-out;
+	 -webkit-appearance: none;
+	 -moz-appearance: none;
+	 font-size: 1rem;
+	 box-shadow: none;
+	 background: transparent;
+	 outline: none;
+	 padding: 0.2rem;
+	 margin-left: calc(1rem - 0.2rem);
+	 z-index: 1;
  }
  
- .group .input-wrapper>button:focus{
-     border-radius: calc(var(--border-radius) - 0.25rem);
+ .group .input-wrapper>button:focus {
+	 border-radius: calc(var(--border-radius) - 0.25rem);
  }
  
  .group .input-wrapper>div+button {
-     margin-left: 0;
-     margin-right: calc(1rem - 0.2rem);
+	 margin-left: 0;
+	 margin-right: calc(1rem - 0.2rem);
  }
  
  .input.group button:focus {
-     box-shadow: 0 0 0 2px var(--background-color), 0 0 0 calc(2px + 2px) var(--outline, #0075ff);
- } 
- 
- /* START:: Password Input */
- .input .password-btn .hide, .input .password-btn[data-show-pass] .show{
-     display: none;
+	 box-shadow: 0 0 0 2px var(--background-color),
+		 0 0 0 calc(2px + 2px) var(--outline, #0075ff);
  }
  
- .input .password-btn[data-show-pass] .hide{
-     display: block;
+ /* START:: Password Input */
+ .input .password-btn .hide,
+ .input .password-btn[data-show-pass] .show {
+	 display: none;
+ }
+ 
+ .input .password-btn[data-show-pass] .hide {
+	 display: block;
  }
  
  .input .password-strength {
-     height: 0.1875rem;
-     width: 100%;
-     position: absolute;
-     padding: 0 5px;
-     bottom: 3px;
-     overflow: hidden;
+	 height: 0.1875rem;
+	 width: 100%;
+	 position: absolute;
+	 padding: 0 5px;
+	 bottom: 3px;
+	 overflow: hidden;
  }
  
  .input .password-strength .strength {
-     height: 100%;
-     width: 0%;
-     border-radius: var(--border-radius, 8px);
+	 height: 100%;
+	 width: 0%;
+	 border-radius: var(--border-radius, 8px);
  }
+ 
  /* END:: Password Input */

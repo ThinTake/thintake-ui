@@ -1,5 +1,8 @@
 .input,
 .select {
+	--input-border-width: 0.09375rem;
+	--input-focused-border-width: 0.125rem;
+
     width: 100%;
     background: #fff;
 }
@@ -26,7 +29,7 @@
     left: 0;
     right: 0;
     border-radius: var(--border-radius, 6px);
-    border: 0.09375rem solid var(--border-color);
+    border: var(--input-border-width) solid var(--border-color);
     /* 1.5px */
     pointer-events: none;
     transition: 0.2s ease-in-out;
@@ -34,7 +37,7 @@
 
 .input._focused .input-wrapper::after,
 .select._focused .input-wrapper::after {
-    border-width: 0.125rem;
+    border-width: var(--input-focused-border-width);
     border-color: var(--primary);
 }
 
